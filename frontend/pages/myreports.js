@@ -32,18 +32,18 @@ const MyReports = () => {
     const  [reports, setReports]  = useState([])
 
 
-    useEffect(() => {
-        (async () => {
-        
-
+    const fetchData = async () => {
             try {
                 const res = await loadReports()
                 setReports(res)
             } catch(e) {
                 setErrors(true)
             }
-        })()
-    }, [reports]);
+    }
+
+    useEffect(() => {
+        fetchData()
+    }, [])
 
     return (
         <Wrapper>
