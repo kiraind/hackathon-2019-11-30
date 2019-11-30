@@ -34,6 +34,8 @@ const MyReports = () => {
 
     useEffect(() => {
         (async () => {
+        
+
             try {
                 const res = await loadReports()
                 setReports(res)
@@ -41,9 +43,7 @@ const MyReports = () => {
                 setErrors(true)
             }
         })()
-    }
-        
-    );
+    }, []);
 
     return (
         <Wrapper>
