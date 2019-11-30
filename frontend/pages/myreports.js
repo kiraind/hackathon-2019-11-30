@@ -43,7 +43,7 @@ const MyReports = () => {
                 setErrors(true)
             }
         })()
-    }, []);
+    }, [reports]);
 
     return (
         <Wrapper>
