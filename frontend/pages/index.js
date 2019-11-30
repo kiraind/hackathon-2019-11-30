@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Webcam from 'react-webcam'
 import Router from 'next/router'
 
+import jsQR from 'jsqr'
+
 import CameraIcon from '../components/icons/camera.js'
 import MenuIcon from '../components/icons/menu.js'
 import QRIcon from '../components/icons/qricon.js'
@@ -22,6 +24,8 @@ const Home = () => {
             const imageSrc = webcamRef.current.getScreenshot();
 
             console.log(imageSrc)
+
+            // const code = jsQR(imageData, width, height, options?);
 
             Router.push('/addreport')
         },
