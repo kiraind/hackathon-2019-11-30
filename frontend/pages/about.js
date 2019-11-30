@@ -1,5 +1,7 @@
+import Wrapper from '../components/Wrapper.js'
+
 const About = () => (
-    <div>About</div>
+    <Wrapper>About</Wrapper>
 )
 
 export default About

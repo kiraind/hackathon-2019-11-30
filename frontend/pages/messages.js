@@ -1,5 +1,7 @@
+import Wrapper from '../components/Wrapper.js'
+
 const Messages = () => (
-    <div>Messages</div>
+    <Wrapper>Messages</Wrapper>
 )
 
 export default Messages

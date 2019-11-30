@@ -1,5 +1,7 @@
+import Wrapper from '../components/Wrapper.js'
+
 const Contacts = () => (
-    <div>Contacts</div>
+    <Wrapper>Contacts</Wrapper>
 )
 
 export default Contacts

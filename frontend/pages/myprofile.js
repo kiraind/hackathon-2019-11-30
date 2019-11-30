@@ -1,5 +1,7 @@
+import Wrapper from '../components/Wrapper.js'
+
 const MyProfile = () => (
-    <div>MyProfile</div>
+    <Wrapper>MyProfile</Wrapper>
 )
 
 export default MyProfile

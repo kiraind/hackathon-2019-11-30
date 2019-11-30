@@ -9,6 +9,7 @@ import MenuIcon from '../components/icons/menu.js'
 import QRIcon from '../components/icons/qricon.js'
 
 import MenuDrawer from '../components/MenuDrawer.js'
+import Head from '../components/Head.js'
 
 const width  = 1920
 const height = 1080
@@ -41,6 +42,8 @@ const Home = () => {
 
     return (
         <div>
+            <Head />
+
             <Webcam
                 audio={false}
                 height={height}

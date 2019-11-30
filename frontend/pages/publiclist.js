@@ -1,5 +1,7 @@
+import Wrapper from '../components/Wrapper.js'
+
 const PublicList = () => (
-    <div>PublicList</div>
+    <Wrapper>PublicList</Wrapper>
 )
 
 export default PublicList

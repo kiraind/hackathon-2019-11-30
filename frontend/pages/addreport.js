@@ -1,5 +1,7 @@
+import Wrapper from '../components/Wrapper.js'
+
 const AddReport = () => (
-    <div>add report</div>
+    <Wrapper>add report</Wrapper>
 )
 
 export default AddReport
