@@ -5,7 +5,7 @@ const MyQRCode = () => (
         <div className="MyQRCodeContent">
             
             <img src="/sample-qr.png" />
-            <h1>Алексей Паксеваткин</h1>
+            <h1>8 (800) 555 35 35</h1>
         </div>
 
         <style jsx global>{`
