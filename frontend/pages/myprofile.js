@@ -12,7 +12,6 @@ const MyProfile = () => {
     }
 
     return (
-<<<<<<< HEAD
         <Wrapper>
             <table>
                 <tbody>
@@ -37,11 +36,6 @@ const MyProfile = () => {
                         <td>г. Калуга, ул. Пушкина, д. 4, кв. 20</td>
                     </tr>                    
                 </tbody>
-                
-                
-                
-                
-                
             </table>
 
         </Wrapper>
