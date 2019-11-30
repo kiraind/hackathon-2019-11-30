@@ -67,7 +67,7 @@ async function sendReport(text, photo) {
         photo,
     }
 
-    const rawResponse = await fetch('https://httpbin.org/post', {
+    const rawResponse = await fetch('/api/', {
         method: 'POST',
         headers: {
         'Accept': 'application/json',
