@@ -28,22 +28,25 @@ const ReportItem = ({ report }) => (
 )
 
 const MyReports = () => {
-    const  [hasError, setErrors]  = useState(false)
-    const  [reports, setReports]  = useState([])
+    // const  [hasError, setErrors]  = useState(false)
+    // const  [reports, setReports]  = useState([])
 
-    const fetchData = async () => {
-            try {
-                const res = await loadReports()
-                console.log(res)
-                setReports(res)
-            } catch(e) {
-                setErrors(true)
-            }
-    }
 
-    useEffect(() => {
-        fetchData()
-    }, [reports, hasError])
+    // const fetchData = async () => {
+    //         try {
+    //             const res = await loadReports()
+    //             console.log(res)
+    //             setReports(res)
+    //         } catch(e) {
+    //             setErrors(true)
+    //         }
+    // }
+
+    // useEffect(() => {
+    //     fetchData()
+    // }, [])
+
+    reports = []
 
     return (
         <Wrapper>
