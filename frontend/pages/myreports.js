@@ -31,7 +31,6 @@ const MyReports = () => {
     const  [hasError, setErrors]  = useState(false)
     const  [reports, setReports]  = useState([])
 
-
     const fetchData = async () => {
             try {
                 const res = await loadReports()
@@ -44,7 +43,7 @@ const MyReports = () => {
 
     useEffect(() => {
         fetchData()
-    }, [])
+    }, [reports, hasError])
 
     return (
         <Wrapper>
