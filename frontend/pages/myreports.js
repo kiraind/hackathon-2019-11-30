@@ -35,6 +35,7 @@ const MyReports = () => {
     const fetchData = async () => {
             try {
                 const res = await loadReports()
+                console.log(res)
                 setReports(res)
             } catch(e) {
                 setErrors(true)
