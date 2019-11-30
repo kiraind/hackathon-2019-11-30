@@ -18,7 +18,15 @@ const MyReports = () => {
                     key={report.id}
                     className="ReportItem"
                 >
-                    <div className="ReportImg"></div>
+                    <div className="ReportImg">
+                        <style jsx>{`
+                            .ReportImg {
+                                background-image: url(${report.photo});
+                                background-size: cover;
+                                background-position: center center;
+                            }
+                        `}</style>
+                    </div>
                     <div
                         className={"ReportName" + ([
                             ' pending',
@@ -29,7 +37,7 @@ const MyReports = () => {
                 </div>
             ))}
 
-            <style>{`
+            <style jsx>{`
                 .ReportItem {
                     display: flex;
                     height: 55px;
