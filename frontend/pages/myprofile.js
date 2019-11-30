@@ -12,6 +12,7 @@ const MyProfile = () => {
     }
 
     return (
+<<<<<<< HEAD
         <Wrapper>
             <table>
                 <tbody>
