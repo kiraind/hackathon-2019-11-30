@@ -13,7 +13,8 @@ import MenuDrawer from '../components/MenuDrawer.js'
 const videoConstraints = {
     width: 1080,
     height: 1920,
-    facingMode: 'environment'
+    facingMode: 'environment',
+    // : ''
 }
 
 const Home = () => {
@@ -38,10 +39,10 @@ const Home = () => {
         <div>
             <Webcam
                 audio={false}
-                height={720}
+                height={1920}
+                width={1080}
                 ref={webcamRef}
                 screenshotFormat="image/jpeg"
-                width={1280}
                 videoConstraints={videoConstraints}
                 className="WebcamImage"
             />
