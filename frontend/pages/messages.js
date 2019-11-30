@@ -5,7 +5,6 @@ const Contacts = () => {
             id: 1,
             name: 'Иван Иванов',
         },
-        },
     ]
 
     return (
