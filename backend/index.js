@@ -85,6 +85,8 @@ function handlePost(request, response) {
                 break
             }
             case 'viewreports': {
+                console.log('viewreports')
+
                 response.writeHead(200, { 'Content-Type': 'text/json' })
                 response.write(JSON.stringify(reports))
                 response.end()
@@ -92,6 +94,8 @@ function handlePost(request, response) {
                 break
             }
             case 'addreport': {
+                console.log('addreport')
+
                 reports.push({
                     id: reports.length,
                     text: query.text,

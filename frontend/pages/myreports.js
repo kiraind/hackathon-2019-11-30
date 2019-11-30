@@ -27,18 +27,18 @@ const ReportItem = ({ report }) => (
 
 const MyReports = () => {
     const  [hasError, setErrors]  = useState(false)
-    const  [reports, setReports]  = useState({ reports: [] })
+    const  [reports, setReports]  = useState([])
 
 
     useEffect(() =>
         loadReports()
-            .then(res => this.setState({ reports: res }))
-            .catch(() => this.setState({ hasErrors: true }))
+            .then(res => setReports(res))
+            .catch(() => setErrors(true))
     );
 
     return (
         <Wrapper>
-            {reports.reports.map(report => (
+            {reports.map(report => (
                 <ReportItem report={report} />
             ))}
 
