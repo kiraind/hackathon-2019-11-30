@@ -19,9 +19,8 @@ const MenuDrawer = ({ shown, onClose }) => (
             <MenuDrawerItem href="/contacts">Мои контакты</MenuDrawerItem>
             <MenuDrawerItem href="/messages">Мои сообщения</MenuDrawerItem>
             <MenuDrawerItem href="/myreports">Мои жалобы</MenuDrawerItem>
-            <MenuDrawerItem href="/publiclist">Список ДТП</MenuDrawerItem>
+            <MenuDrawerItem href="/publiclist">Поиска свидетелей</MenuDrawerItem>
             <MenuDrawerItem href="/about">О сервисе</MenuDrawerItem>
-            {/* <MenuDrawerItem></MenuDrawerItem> */}
         </div>
         <div
             className="MenuDrawerFiller"
