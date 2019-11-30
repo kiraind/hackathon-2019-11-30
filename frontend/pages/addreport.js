@@ -22,7 +22,7 @@ const AddReport = () => {
 
             <div
                 className="SendButton"
-                onClick={() => sendReport('Яма на Циолковского', 'dsad')}
+                onClick={() => sendReport('Яма на Циолковского', imageSrc)}
             >Отправить</div>
 
             <style jsx>{`
@@ -63,6 +63,7 @@ const AddReport = () => {
 
 async function sendReport(text, photo) {
     const obj = {
+        type: 'addreport',
         text,
         photo,
     }
@@ -70,8 +71,8 @@ async function sendReport(text, photo) {
     const rawResponse = await fetch('/api/', {
         method: 'POST',
         headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify(obj)
     });

@@ -1,22 +1,19 @@
 import Wrapper from '../components/Wrapper.js'
 
 const MyReports = () => {
-    const reports = [
-        {
-            id: 1,
-            name: 'Неправильная парковка',
-            status: 1,
-        },
-        {
-            id: 2,
-            name: 'Яма на улице Ленина',
-            status: 0,
-        },
-    ]
+    const  [hasError, setErrors]  = useState(false)
+    const  [reports, setReports]  = useState({ reports: [] })
+
+
+    useEffect(() =>
+        loadReports()
+            .then(res => this.setState({ reports: res }))
+            .catch(() => this.setState({ hasErrors: true }))
+    );
 
     return (
         <Wrapper>
-            {reports.map(report => (
+            {reports.reports.map(report => (
                 <div
                     key={report.id}
                     className="ReportItem"
@@ -67,6 +64,25 @@ const MyReports = () => {
             `}</style>
         </Wrapper>
     )
+}
+
+async function loadReports() {
+    const obj = {
+        type: 'viewreports'
+    }
+
+    const rawResponse = await fetch('/api/', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(obj)
+    });
+
+    const content = await rawResponse.json();
+
+    return content
 }
 
 export default MyReports

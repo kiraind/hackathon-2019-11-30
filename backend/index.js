@@ -57,7 +57,8 @@ function handleGet(request, response) {
     })
 }
 
-
+const reports = []
+const events  = []
 
 function handlePost(request, response) {
     var body = ''
@@ -72,9 +73,38 @@ function handlePost(request, response) {
     request.on('end', function () {
         console.log( body )
 
-        response.writeHead(200, { 'Content-Type': 'text/plain' })
-        response.write('[ 12, 13, 14 ]')
-        response.end()
+        const query = JSON.parse(body)
+
+        switch(query.type) {
+            case 'viewevents': {
+
+                break
+            }
+            case 'addevent': {
+
+                break
+            }
+            case 'viewreports': {
+                response.writeHead(200, { 'Content-Type': 'text/json' })
+                response.write(JSON.stringify(reports))
+                response.end()
+
+                break
+            }
+            case 'addreport': {
+                reports.push({
+                    id: reports.length,
+                    text: query.text,
+                    photo: query.photo,
+                })
+
+                response.writeHead(200, { 'Content-Type': 'text/json' })
+                response.write('{"status":"ok"}')
+                response.end()
+
+                break
+            }
+        }
     })
 }
 
