@@ -10,9 +10,13 @@ import QRIcon from '../components/icons/qricon.js'
 
 import MenuDrawer from '../components/MenuDrawer.js'
 
+const width  = 1920
+const height = 1080
+
 const videoConstraints = {
-    width: 1080,
-    height: 1920,
+    width,
+    height,
+    orientation: 'portrait',
     facingMode: 'environment',
     // : ''
 }
@@ -39,8 +43,8 @@ const Home = () => {
         <div>
             <Webcam
                 audio={false}
-                height={1920}
-                width={1080}
+                height={height}
+                width={width}
                 ref={webcamRef}
                 screenshotFormat="image/jpeg"
                 videoConstraints={videoConstraints}
