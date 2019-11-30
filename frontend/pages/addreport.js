@@ -1,5 +1,7 @@
 import Wrapper from '../components/Wrapper.js'
 
+import config from '../config.js'
+
 const AddReport = () => {
     const imageSrc = process.browser ?
         localStorage.getItem('current-photo')
@@ -68,7 +70,7 @@ async function sendReport(text, photo) {
         photo,
     }
 
-    const rawResponse = await fetch('/api/', {
+    const rawResponse = await fetch(config.post_url, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',

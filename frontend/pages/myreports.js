@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import Wrapper from '../components/Wrapper.js'
 
+import config from '../config.js'
+
 const ReportItem = ({ report }) => (
     <div
         key={report.id}
@@ -30,10 +32,17 @@ const MyReports = () => {
     const  [reports, setReports]  = useState([])
 
 
-    useEffect(() =>
-        loadReports()
-            .then(res => setReports(res))
-            .catch(() => setErrors(true))
+    useEffect(() => {
+        (async () => {
+            try {
+                const res = await loadReports()
+                setReports(res)
+            } catch(e) {
+                setErrors(true)
+            }
+        })()
+    }
+        
     );
 
     return (
@@ -84,7 +93,7 @@ async function loadReports() {
         type: 'viewreports'
     }
 
-    const rawResponse = await fetch('/api/', {
+    const rawResponse = await fetch(config.post_url, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
