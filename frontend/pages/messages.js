@@ -1,5 +1,5 @@
 import Wrapper from '../components/Wrapper.js'
-const Contacts = () => {
+const Messages = () => {
     const contacts = [
         {
             id: 1,
