@@ -20,7 +20,10 @@ const AddReport = () => {
 
             <p>Добрый день! 19 ноября 2016 года в 14 часов 16 минут водитель автомобиля Volvo (регистрационный знак A015КМ777) нарушил пункт 12.2 правил дорожного движения и поставил свой автомобиль на стоянку на тротуаре и на газоне. Нарушение произошло по адресу г.Москва, Улица ул. , д. № Прошу наказать нарушителя по части 6 статьи 12.19 КоАП и сообщить мне о результатах рассмотрения данного дела.</p>
 
-            <div className="SendButton">Отправить</div>
+            <div
+                className="SendButton"
+                onClick={() => sendReport('Яма на Циолковского', 'dsad')}
+            >Отправить</div>
 
             <style jsx>{`
                 .ReportImage {
@@ -56,6 +59,26 @@ const AddReport = () => {
             `}</style>
         </Wrapper>
     )
+}
+
+async function sendReport(text, photo) {
+    const obj = {
+        text,
+        photo,
+    }
+
+    const rawResponse = await fetch('https://httpbin.org/post', {
+        method: 'POST',
+        headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(obj)
+    });
+
+    const content = await rawResponse.json();
+
+    console.log(content)
 }
 
 export default AddReport
