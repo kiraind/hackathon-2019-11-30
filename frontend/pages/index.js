@@ -11,7 +11,7 @@ import QRIcon from '../components/icons/qricon.js'
 import MenuDrawer from '../components/MenuDrawer.js'
 import Head from '../components/Head.js'
 
-const width  = 1920 - 64
+const width  = 1920 - 68
 const height = 1080
 
 const videoConstraints = {
