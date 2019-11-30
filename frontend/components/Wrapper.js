@@ -3,40 +3,49 @@ import Head from './Head.js'
 
 import BackArrow from './icons/back.js'
 
-const Wrapper = ({ children }) => (
-    <div className="Wrapper">
-        <Head />
+const Wrapper = ({ children }) => {
+    // const token = localStorage.getItem('token')
 
-        <header>
-            <div
-                className="HeaderBack"
-                onClick={() => Router.back()}
-            >
-                <BackArrow />
-            </div>
-        </header>
+    // if(token === null) {
+    //     Router.push('/login')
+    // }
+    
 
-        {children}
+    return (
+        <div className="Wrapper">
+            <Head />
 
-        <style jsx global>{`
-            body {
-                margin: 0;
-            }
+            <header>
+                <div
+                    className="HeaderBack"
+                    onClick={() => Router.back()}
+                >
+                    <BackArrow />
+                </div>
+            </header>
 
-            header {
-                height: 40px;
-                display: flex;
-            }
+            {children}
 
-            .HeaderBack {
-                height: 40px;
-                width: 40px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-        `}</style>
-    </div>
-)
+            <style jsx global>{`
+                body {
+                    margin: 0;
+                }
+
+                header {
+                    height: 40px;
+                    display: flex;
+                }
+
+                .HeaderBack {
+                    height: 40px;
+                    width: 40px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            `}</style>
+        </div>
+    )
+}
 
 export default Wrapper

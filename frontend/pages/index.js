@@ -11,7 +11,7 @@ import QRIcon from '../components/icons/qricon.js'
 import MenuDrawer from '../components/MenuDrawer.js'
 import Head from '../components/Head.js'
 
-const width  = 1920
+const width  = 1920 - 60
 const height = 1080
 
 const videoConstraints = {
@@ -29,7 +29,9 @@ const Home = () => {
         () => {
             const imageSrc = webcamRef.current.getScreenshot();
 
-            console.log(imageSrc)
+            // console.log(imageSrc)
+
+            localStorage.setItem('current-photo', imageSrc)
 
             // const code = jsQR(imageData, width, height, options?);
 
