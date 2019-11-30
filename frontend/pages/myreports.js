@@ -1,5 +1,29 @@
 import Wrapper from '../components/Wrapper.js'
 
+const ReportItem = ({ report }) => (
+    <div
+        key={report.id}
+        className="ReportItem"
+    >
+        <div className="ReportImg">
+            <style jsx>{`
+                .ReportImg {
+                    background-image: url(${report.photo});
+                    background-size: cover;
+                    background-position: center center;
+                }
+            `}</style>
+        </div>
+        <div
+            className={"ReportName" + ([
+                ' pending',
+                ' resolved',
+                ' refused',
+            ])[report.status]}
+        >{report.name}</div>
+    </div>
+)
+
 const MyReports = () => {
     const  [hasError, setErrors]  = useState(false)
     const  [reports, setReports]  = useState({ reports: [] })
@@ -14,27 +38,7 @@ const MyReports = () => {
     return (
         <Wrapper>
             {reports.reports.map(report => (
-                <div
-                    key={report.id}
-                    className="ReportItem"
-                >
-                    <div className="ReportImg">
-                        <style jsx>{`
-                            .ReportImg {
-                                background-image: url(${report.photo});
-                                background-size: cover;
-                                background-position: center center;
-                            }
-                        `}</style>
-                    </div>
-                    <div
-                        className={"ReportName" + ([
-                            ' pending',
-                            ' resolved',
-                            ' refused',
-                        ])[report.status]}
-                    >{report.name}</div>
-                </div>
+                <ReportItem report={report} />
             ))}
 
             <style jsx>{`
