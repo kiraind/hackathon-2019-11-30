@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "jsqr": "^1.2.0",
-    "next": "9.3.2",
+    "next": "13.0.2",
     "react": "16.12.0",
     "react-dom": "16.12.0",
     "react-webcam": "^4.0.0"
